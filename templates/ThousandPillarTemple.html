@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>Thousand Pillar Temple</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+        background-color: whitesmoke;
+    }
+    .navbar{
+        padding:4rem,3rem;
+        top:0;
+        min-height: 8vh;
+        background-color:white;
+    }
+    nav img:hover{
+        transform:scale(1.1);
+    }
+    .navbar-toggler{
+        background:red;
+        border:none;
+        padding:10px;
+        outline:none;
+    }
+    .navbar-toggler span{
+        display: block;
+        width:20px;
+        border:1px;
+        height:2px;
+        background:white;
+    }
+    .navbar-toggler span+span{
+        margin-top:4px;
+        width:15px;
+        margin-left:2px;
+    }
+    .navbar-toggler span+span+span{  
+        width:7px;
+        margin-left:2px;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link{
+        font-size:30px;
+        position:relative;
+        padding:2rem 1.2rem;
+        color:black;
+    }
+    #home{   
+        color:black;
+        font-size: 30px;
+    }
+    #home:hover{
+        color:white;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link:hover{
+        color:white;
+    }
+    button{
+        transition-duration: 5s;
+        margin-left: 15px;
+        }
+    button:hover{       
+        transform: scale(1.2);   
+    }
+    .health_img1 img{  
+        margin-top:20px;
+        margin-left:30px;
+        height:300px;
+        width:88%;
+        border:2px solid black;
+        border-radius:10px; 
+        transition-duration:5s ;
+    }
+    .health_img2 img{  
+        margin-top:20px;
+        margin-left:30px;
+        height:300px;
+        width:88%;
+        border:2px solid black;
+        border-radius:10px;   
+        transition-duration:3s ;
+     }
+     
+    .card {
+    background-color: white;
+    width: 350px;
+    border: none;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 12px
+    }
+
+    .circle-image img {
+    border: 6px solid #fff;
+    border-radius: 100%;
+    padding: 0px;
+    top: -28px;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    z-index: 1;
+    background: #e7d184;
+    cursor: pointer
+    }
+
+    .dot {
+    height: 18px;
+    width: 18px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid #fff;
+    top: -48px;
+    left: 186px;
+    z-index: 1000
+    }
+
+    .name {
+    margin-top: -21px;
+    font-size: 18px
+    }
+
+    .fw-500 {
+    font-weight: 500 !important
+    }
+
+    .start {
+    color: green
+    }
+
+ .stop {
+    color: red
+    }
+    .first{
+      height: 150px;
+      width: 100%;
+      border: 1px solid #000;
+    }
+ .boxx{
+        height: 700px;
+        width: 100%;
+        border: 1px solid #000  ;
+    }
+    .health_img3 img{  
+        margin-top:20px;
+        margin-left:30px;
+        height:100px;
+        width:102%;
+        border:2px solid black;
+        border-radius:10px;   
+        transition-duration:3s ;
+     }
+    
+   
+    </style>
+</head>
+<body>
+    <div class="container-fluid" >      
+        <div class="row">               
+        <div class="col-md-12">         
+        <nav class="navbar navbar-expand-lg  nav-menu fixed-top" style="background-color: grey; " >
+            {% load static %}
+            <img src="{% static 'Ts logo.jpg' %}" style="height:70px; border-radius: 3px;">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span ></span>
+            <span ></span>
+            <span ></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a id='home' class="nav-link" href="home"  >
+                            Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-left:6px;">
+                   District
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="Hyderabad">1.Hyderabad</a>
+                        <a class="dropdown-item" href="warangal">2.warngal</a>
+                        <a class="dropdown-item" href="Adilabad">3.Adilabad</a>
+                        <a class="dropdown-item" href="karimnagar">4.karimnagar</a>
+                        <a class="dropdown-item" href="RangaReddy">5.Ranga Reddy</a>
+                        <a class="dropdown-item" href="index">6.Khammam</a>
+                        <a class="dropdown-item" href="Nizamabad">7.Nizamabad</a>
+                        <a class="dropdown-item" href="Mahabubnagar">8.Mahabubnagar</a>
+                        <a class="dropdown-item" href="Medak">9.Medak</a>
+                        <a class="dropdown-item" href="Nalgonda">10.Nalgonda</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="padding-left: 6px;" >
+                       Telangana Famous Places
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="charminar">Charminar</a>
+                        <a class="dropdown-item" href="goloconda">Goloconda Fort</a>
+                        <a class="dropdown-item" href="ThousandPillarTemple">Thousand pillars Temple</a>
+                         </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="home" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"   style="padding-left: 2px;">
+                            Telangana Temples
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="BirlaMandir">Birla Mandir</a>
+                            <a class="dropdown-item" href="SanghiTemple">Sanghi Temple</a>
+                            <a class="dropdown-item" href="ThousandPillarTemple">Thousand Pillar Temple</a>
+                            <a class="dropdown-item" href="RajaRajeswara">Raja Rajeswara </a>
+                     </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="home" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="padding-left: 2px;">
+                           T.S Waterfalls
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="kuntalawaterfall">Kuntala water Fall</a>
+                            <a class="dropdown-item" href="pocherawaterfall">Pochera Water Fall</a>
+                            <a class="dropdown-item" href="bogatha">Bogatha Water Fall</a>
+                        </div>
+                    </li>
+                                </ul>
+                </div>
+        </nav>      
+    </div> <!--col-md-12end -->
+    </div> <!--#row1 end-->
+    </div>  <!--container1-->          
+    
+    <div class="container-fluid">
+        <div class="row" style="height:150px;"></div>
+        <div class="row">
+              <div class="health_img1 col-md-12">
+                <h3>Thousand Pillar Temple</h3>             
+<hr>                    
+</div>
+        
+                  <div class="container-fluid">
+                    <div class="row" style="height:50px;">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                           
+                            <P style="font-size:20px; font-family:'bitter',serif;line-height:35px;text-align:justify;  color: black;">
+                                The Thousand Pillar Temple or Rudreswara Swamy Temple[1] is a historic Hindu temple located in the town of Hanamakonda, Telangana State, India.[2] It is dedicated to Lord Shiva, Vishnu and Surya. Thousand Pillar Temple, along with Warangal Fort, Kakatiya Kala Thoranam and Ramappa Temple are added to the tentative list of World Heritage sites recognised by UNESCO.[3]
+
+
+                            </P>
+                                           <div class="first col-md-4">
+                                            
+                                            <p> <strong>Contents</strong> <br>
+                                                
+                                                1	History <br>
+                                                2	Architecture <br>
+                                                3	Transport <br>
+                                                4	References <br>
+                                                5	External links <br>
+                                                
+                                               </p>
+                                             </div>
+                                            <h3>History</h3>
+                                            <hr>
+                                            <P style="font-size:20px; font-family:'bitter',serif;line-height:35px;text-align:justify;  color: black;">
+                                               
+                                                Many Hindu temples were developed under the patronage of Ganapati Deva, Rudrama Devi and Prataparudra who were of Kakatiya dynasty. The Thousand Pillar Temple was believed to be constructed during the period between 1175–1324 CE by order of the king, Rudra Deva. It stands out to be a masterpiece and achieved major heights in terms of architectural skills by the ancient Kakatiya Vishwakarma Sthapathis (Architect). The Executive officer of the subject temple is P.Venugopal.[4]
+
+                                                It was desecrated by the Tughlaq dynasty during their invasion of the Deccan.[citation needed]
+                                                
+                                                However, the 7th Nizam of Hyderabad,(Mir Osman Ali Khan) donated a grant of 1 Lakh INR towards the reconstruction of this temple.[5][6]
+                                                
+                                                 
+                                                     
+                                               
+                                            </p>
+
+                        </div>
+                    
+                    <div class="boxx col-md-4"> 
+                                           <h3 style="background-color:green;text-align: center; margin-top: 6px;">Thousand Pillar Temple</h3>    
+                            <img src="{% static 'tp0.jpg' %}" style="height: 300px; width:100%; padding-left: 25px; padding-right: 25px; " >
+                            <h3 style="background-color:green;text-align: center; margin-top: 6px;">Location</h3>    
+                            
+                           <p style="word-spacing:120px ;"><br>
+                            </p>
+                                        </div>
+                                            </div>
+                                            <h3>Architecture</h3>
+                    <hr>
+                                                                   </div>
+
+                                               <div class="container-fluid">
+                                                <div class="row" >
+                                                </div>
+                                                <div class="row">
+                                                    <div class=" col-md-4"> 
+                                                        <img src="{% static 'tp2.jpg' %}" style="height: 500px; width:100%; padding-left: 25px; padding-right: 25px; " >
+                                       
+                                    </div>
+                                                    
+                                    <div class="col-md-8">
+                                        <P style="font-size:20px; font-family:'bitter',serif;line-height:35px;text-align:justify;  color: black;">
+                                            The Thousand Pillar Temple with its ruins lies near the Hanamkonda-Warangal Highway in Telangana State, about 150 kilometres (93 mi) from the city of Hyderabad.
+
+                                            Rudreswara Temple locally known as Veyisthambala Gudi (Thousand pillars temple) is one of the fine and earliest available examples of Kakatiya art, architecture and sculpture. It was built by Rudra Deva and named after him as ‘Sri Rudreswara Swamy temple with the presiding deity as Rudreswara, in 1163 AD in the style of later Chalukyan and early Kakatiyan Architecture, star-shaped and triple shrined (Trikutalaya). The temple is a fine specimen of architecture and sculpture with One thousand pillars. There are richly carved pillars, perforated screens, exquisite icons, rock cut elephants and the monolithic dolerite Nandi as components of the temple. Strengthening of foundations like sandbox technique, the skill of Kakatiya sculptors is manifest in adroit craftsmanship and flawless ivory carving technique in their art. The ingenuity of Kakatiya sculptors is visible in likes of lathe turned, and shiny polish in dolerite and granite stone sculpture and craftwork of Nava Rangamandapa.    
+                                                
+                                               
+                                        </P>
+                                     </div>
+                                     </div>
+                                    </div>
+                                    
+                                   
+      
+
+
+                                         <div class="container d-flex justify-content-center mt-5">  
+    <div class="card text-center mb-5">
+        <div class="circle-image"> 
+            <img src="{% static 'Ts logo.jpg' %}" width="50"> 
+           
+        </div> 
+        <span class="dot"></span>
+        <span class="name mb-1 fw-500">Telangana Tourism</span> 
+        <small class="text-black-50">V.Srinivas Goud</small>
+        <small class="text-black-50 font-weight-bold">+91-40-23262151</small>
+        <div class="location mt-4">
+            <span class="d-block"> 
+                <i class="fa fa-map-marker start"></i> 
+                <small class="text-truncate ml-2"> Tourism House
+                    Himayatnagar, Hyderabad - 500 029,
+</small>
+            </span> 
+            <span>
+                <i class="fa fa-map-marker stop mt-2"></i> 
+                <small class="text-truncate ml-2">3-5-891,                     Telangana, India.</small> 
+            </span> 
+        </div>
+        
+             </div>
+    </div>
+</div>  
+</div>
+<footer>
+    <div class="container-fluid">
+    <div class="row" style="height:50px;"></div>
+    <div class="row" style="background-color:grey;color:white;">
+        <div class=" col-md-4 offset-md-1">
+            <h3 style="margin-top:30px;margin-left:10px;"><i class="bi bi-building"></i> Telangana Tourism Department</h3>
+            <p style="margin-left:10px;" ><br>
+                Ground Floor, Kala Bhavan,<br>
+Ravindra Bharathi,<br>
+Hyderabad. - 500004,<br>
+Telangana, India.<br>    
+                
+            </p> 
+        </div>
+        <div class="col-md-4 ">
+            <h3 style="margin-top:30px;margin-left:30px;"><i class="bi bi-telephone"></i> CONTACT</h3>
+            <p style="padding-top: 30px;">                        
+            <i class="bi bi-telephone"></i> Phone:  +91-40-23262152, +91-40-23262153, +91-40-23262154, +91-40-23262157
+            </p> 
+        </div>
+        <div class="col-md-3">
+            <h3 style="margin-top:30px; margin-left:50px;"><i class="bi bi-geo-alt-fill"></i> LOCATION</h3>
+            <div class="map-wrapper">
+                <iframe class="googlemap" src="" width="100%;" height="150px;" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" style="color:black;background-color:burlywood">
+            <div class="col-md-7 offset-md-5">
+                <p style="font-size:20px;">@2022 copyrights reserved<p>
+            </div> 
+        </div>
+    </div>
+    </footer>                                  
+</body>     
+</html>

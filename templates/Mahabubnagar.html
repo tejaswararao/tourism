@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>Mahabubnagar</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+        background-color: whitesmoke;
+    }
+    .navbar{
+        padding:4rem,3rem;
+        top:0;
+        min-height: 8vh;
+        background-color:white;
+    }
+    nav img:hover{
+        transform:scale(1.1);
+    }
+    .navbar-toggler{
+        background:yellow;
+        border:none;
+        padding:10px;
+        outline:none;
+    }
+    .navbar-toggler span{
+        display: block;
+        width:20px;
+        border:1px;
+        height:2px;
+        background:white;
+    }
+    .navbar-toggler span+span{
+        margin-top:4px;
+        width:15px;
+        margin-left:2px;
+    }
+    .navbar-toggler span+span+span{  
+        width:7px;
+        margin-left:2px;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link{
+        font-size:30px;
+        position:relative;
+        padding:2rem 1.2rem;
+        color:black;
+    }
+    #home{   
+        color:black;
+        font-size: 30px;
+    }
+    #home:hover{
+        color:white;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link:hover{
+        color:white;
+    }
+    button{
+        transition-duration: 5s;
+        margin-left: 15px;
+        }
+    button:hover{       
+        transform: scale(1.2);   
+    }
+    .health_img1 img{  
+        margin-top:50px;
+        margin-left:30px;
+        height:300px;
+        width:90%;
+        border:2px solid black;
+        border-radius:10px; 
+        transition-duration:5s ;
+    }
+    .health_img2 img{  
+        margin-top:50px;
+        margin-left:30px;
+        height:300px;
+        width:90%;
+        border:2px solid black;
+        border-radius:10px;   
+        transition-duration:3s ;
+     }
+     .card {
+    background-color: white;
+    width: 350px;
+    border: none;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 12px
+    }
+
+    .circle-image img {
+    border: 6px solid #fff;
+    border-radius: 100%;
+    padding: 0px;
+    top: -28px;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    z-index: 1;
+    background: #e7d184;
+    cursor: pointer
+    }
+
+    .dot {
+    height: 18px;
+    width: 18px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid #fff;
+    top: -48px;
+    left: 186px;
+    z-index: 1000
+    }
+
+    .name {
+    margin-top: -21px;
+    font-size: 18px
+    }
+
+    .fw-500 {
+    font-weight: 500 !important
+    }
+
+    .start {
+    color: green
+    }
+
+ .stop {
+    color: red
+    }
+
+    
+    
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid" >      
+        <div class="row">               
+        <div class="col-md-12">         
+        <nav class="navbar navbar-expand-lg  nav-menu fixed-top" style="background-color: grey; " >
+            {% load static %}
+            <img src="{% static 'Ts logo.jpg' %}" style="height:70px; border-radius: 3px;">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span ></span>
+            <span ></span>
+            <span ></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a id='home' class="nav-link" href="home"  >
+                            Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-left:6px;">
+                   District
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="Hyderabad">1.Hyderabad</a>
+                        <a class="dropdown-item" href="warangal">2.warangal</a>
+                        <a class="dropdown-item" href="Adilabad">3.Adilabad</a>
+                        <a class="dropdown-item" href="karimnagar">4.karimnagar</a>
+                        <a class="dropdown-item" href="RangaReddy">5.Ranga Reddy</a>
+                        <a class="dropdown-item" href="index">6.Khammam</a>
+                        <a class="dropdown-item" href="Nizamabad">7.Nizamabad</a>
+                        <a class="dropdown-item" href="Mahabubnagar">8.Mahabubnagar</a>
+                        <a class="dropdown-item" href="Medak">9.Medak</a>
+                        <a class="dropdown-item" href="Nalgonda">10.Nalgonda</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="padding-left: 6px;" >
+                       Telangana Famous Places
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="charminar">Charminar</a>
+                        <a class="dropdown-item" href="goloconda">Goloconda Fort</a>
+                        <a class="dropdown-item" href="ThousandPillarTemple">Thousand pillars Temple</a>
+                         </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="home" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"   style="padding-left: 2px;">
+                            Telangana Temples
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="BirlaMandir">Birla Mandir</a>
+                            <a class="dropdown-item" href="SanghiTemple">Sanghi Temple</a>
+                            <a class="dropdown-item" href="ThousandPillarTemple">Thousand Pillar Temple</a>
+                            <a class="dropdown-item" href="RajaRajeswara">Raja Rajeswara </a>
+                     </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="home" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="padding-left: 2px;">
+                           T.S Waterfalls
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="kuntalawaterfall">Kuntala water Fall</a>
+                            <a class="dropdown-item" href="pocherawaterfall">Pochera Water Fall</a>
+                            <a class="dropdown-item" href="bogatha">Bogatha Water Fall</a>
+                        </div>
+                    </li>
+                                </ul>
+                </div>
+        </nav>      
+    </div> <!--col-md-12end -->
+    </div> <!--#row1 end-->
+    </div>  <!--container1-->          
+    
+    <!--malllelatheertham program start-->
+            <div class="container-fluid">
+                <div class="row" style="height:200px;"></div>
+                <div class="row">
+                
+                    <div class="health_img1 col-md-4">
+                     <marquee behavior="" direction="down">  <img src="{% static 'mallelatheertham.jpg' %}" ></marquee>
+                            </div>
+                                                 <div class=" health_img2 col-md-4">
+                        <img src="{% static 'mallela2.jpg' %}">
+                        
+                    </div>
+                    <div class=" health_img2 col-md-4">
+                       
+                        <marquee behavior="" direction="down">    <img src="{% static 'mallela 3.jpg' %}"></marquee>
+                        <h3 style="margin-left: 29px;padding-top: 30px; color:blue; "></h3>
+                                     
+                    </div>
+                                                                    
+                              </div>
+                              <div>
+                              <h4 style="color:green; "><u>Mallelatheertham</u></h4>
+        <p><strong>Theertham is a waterfall </strong> located in the Nallamala Forest in Nagarkurnool, Telangana, India.[1] The River Krishna flows through this forest. It is located around 58 km from Srisailam and 185 km from Hyderabad.
+
+</p>
+         <p>  <h3> Contents</h3>
+            1	Waterfall<br>
+            2	History<br>
+            3	See also<br>
+            4	References</p>
+         <p>  <h3> Waterfall</h3>
+           <hr>
+       <strong>Mallela Theertham</strong>  is in the middle of the dense forest. A walk down 350 steps is required to access the waterfall.
+            The best flows are from the months of October to February.March to June is the dry season. The remaining months are rainy months, and it is very difficult to drive on the muddy road. The water comes from a small rivulet and from this area,
+            It flows through the dense jungle and then meets the Krishna River. This place is near to Achampet.
+           </p> 
+           <h3> History</h3>
+           <hr>
+            It is said that many sages have performed penances there for Shiva and Shiva has himself appeared there to many of his devotees.[citation needed] It is believed that many tigers visit there to drink water during summer.[citation needed]
+            </p>
+            </div>
+            <hr>
+            <!--mallela Theertham end-->
+<!--pillalamarri program start-->
+<div class="container-fluid">
+    <div class="row" style="height:50px;"></div>
+    <div class="row">
+        <div class="health_img1 col-md-4">
+            <marquee behavior="" direction="right">       <img src="{% static 'marri3.jpg' %}" ></marquee>
+               </div>
+        
+        <div class=" health_img2 col-md-4">
+  <img src="{% static 'pillalamarri-2.jpg' %}">
+            <h3 style="margin-left: 29px;padding-top: 30px; color:blue; "></h3>
+        </div>
+        <div class=" health_img2 col-md-4">
+            <marquee behavior="" direction="right">    <img src="{% static 'marri2.jpg' %}"> </marquee>
+                  
+        </div>                     
+       <div>
+        <h2>History</h2> 
+        <hr>
+                              <p  style="font-size:20px;margin-top: 10px; font-family:'bitter',serif;line-height:35px;text-align:justify; color: black;">
+              The tree is known to be in existence since 1200 CE. It had original main trunk and many prop roots which resemble like many trunks, like its children, hence the name. Main trunk either died out or cannot be recognized among many prop roots, It is spread over three acres of land.[4]
+                                There are tombs of two Muslim Sufi saints, Jamal Hussain and Kamal Hussain in the vicinity. Some believe the tombs are under the tree, but the shrine is at a slight distance from the tree and there is a separate entrance to it.
+                                There is also a beautifully reconstructed Sri Rajarajeswara temple on the premises. The temple was transplanted here from Erladinne[5] (erula dinne) on the left bank of the Krishna river.
+                                A board there says the village was about to be submerged during construction of the Srisailam reservoir when the state archaeology department dismantled the temple and moved it to the Pillalamarri complex in 1981.[4] In 1983, the temple was reconstructed on a new foundation. It was originally built in the 16th Century in an architectural style distinct to the Vijayanagara dynasty that ruled in the area.[4]
+                                In 2003, it was announced that there would be a special cover to commemorate the tree.[6]
+                            <hr>   
+                            </p>
+                        </div>
+                                <div class="container-fluid">
+                                    <div class="row" style="height:30px;"></div>
+                                    <div class="row">
+                                        <div class="health_img1 col-md-5 offset-md-3">
+                                            <h1 style="margin-left: 100px;">ALAMPUR TEMPLE</h1>
+                                                   <img src="{% static 'alampur.jpg' %}" >
+                                                                      </div>
+                                <div>
+                                    
+                                    <hr>
+                                    <p  style="font-size:20px;margin-top: 10px; font-family:'bitter',serif;line-height:35px;text-align:justify; color: black;">
+                                        Hemalapuram(Alampur) is a town situated in Jogulamba Gadwal district[1][2] in the Indian state of Telangana. Alampur is a popular Hindu pilgrimage site in Shaktism and is also home to the Navabrahma Temples,[3][4] a group of nine temples dedicated to Shiva[5] built in the seventh and eighth century CE. It is the meeting point of the rivers Tungabhadra and Krishna and is referred to as Dakshina Kasi and is also considered the western gateway to Srisailam. The sacredness of Alampur is mentioned in the Skanda Purana. It is surrounded by the Nallamala hills and is situated on the left bank of the Tungabhadra river.Alampur was ruled by badami chalukyas they built 9 cluster of shiva temples.After them rashtrakutas of manyakheta and western chalukyas of karnataka built papanasi temples. Alampur is home to hundreds of old Kannada inscirptions because it was ruled by all Kannadiga dynasties like badami chalukyas,Rashtrakutas of manyakheta,western chalukyas of kalyani etc. Alampur contains numerous Hindu temples, the prominent ones being Jogulamba temple, Navabrahma temples, Papanasi temples, and Sangameswara Temple.
+
+Jogulamba temple is one of the eighteen Maha Shakti Peethas, which are the most significant shrines and pilgrimage destinations in Shaktism. The Navabrahma Temples[3][4] are nine temples dedicated to Shiva[5] built in the seventh and eighth century CE by the Badami Chalukyas. The Navabrahma temples are listed as an archaeological and architectural treasure on the official "List of Monuments" prepared by the Archaeological Survey of India.[6] Papanasi temples are a group of twenty three Hindu temples dated between 9th- and 11th-century located in Papanasi village, 2.5 km (1.6 mi) to the south-west of Alampur. Papanasi temples are close to the Navabrahma Temples of the Shaivism tradition, but were constructed a few centuries later by the Rashtrakutas and Western Chalukyas.
+
+</p>
+<hr>
+</div>
+<div style="height: 290px;
+width: 200px;
+border: 1px solid #000;">
+
+    <strong>Contents</strong><br>
+        1  History<br>
+        2	Temples<br>
+        2.1	Jogulamba Temple<br>
+        2.2	Navabrahma Temples<br>
+        2.3	Papanasi Temples<br>
+        2.4	Sangameswara Temple<br>
+        3	Archaeology Museum<br>
+        4	Demographics<br>
+        5	Geography<br>
+        6	References<br>
+        7	External links
+    </div>
+       <div>
+        <hr>
+        <h1>History</h1>
+        <p  style="font-size:20px;margin-top: 10px; font-family:'bitter',serif;line-height:35px;text-align:justify; color: black;">
+        
+        Alampur was under the rule of Satavahanas, Ikshvakus of Nagarjunakonda, Badami Chalukyas, Rashtrakutas, Kalyani Chalukyas, Kakatiyas, Vijayanagara Empire, and the Qutb Shahis of Golconda. Alampur was previously known as Halampuram, Hemalapuram and Alampuram. Under the name Hatampura, it was mentioned in an inscription dated to 1101 CE in the reign of Western Chalukya king Vikramaditya VI.[7]
+    </p>  
+    </div>  
+    </div>   
+                 
+     <div class="container d-flex justify-content-center mt-5">  
+        <div class="card text-center mb-5">
+            <div class="circle-image"> 
+                <img src="{% static 'Ts logo.jpg' %}" width="50"> 
+               
+            </div> 
+            <span class="dot"></span>
+            <span class="name mb-1 fw-500">Telangana Tourism</span> 
+            <small class="text-black-50">V.Srinivas Goud</small>
+            <small class="text-black-50 font-weight-bold">+91-40-23262151</small>
+            <div class="location mt-4">
+                <span class="d-block"> 
+                    <i class="fa fa-map-marker start"></i> 
+                    <small class="text-truncate ml-2"> Tourism House
+                        Himayatnagar, Hyderabad - 500 029,
+    </small>
+                </span> 
+                <span>
+                    <i class="fa fa-map-marker stop mt-2"></i> 
+                    <small class="text-truncate ml-2">3-5-891,                     Telangana, India.</small> 
+                </span> 
+            </div>
+            
+                 </div>
+        </div>
+    </div>  
+    </div>
+    
+
+<footer>
+    <div class="container-fluid">
+    <div class="row" style="height:50px;"></div>
+    <div class="row" style="background-color:grey;color:white;">
+        <div class=" col-md-4 offset-md-1">
+            <h3 style="margin-top:30px;margin-left:10px;"><i class="bi bi-building"></i> Telangana Tourism Department</h3>
+            <p style="margin-left:10px;" ><br>
+                Ground Floor, Kala Bhavan,<br>
+Ravindra Bharathi,<br>
+Hyderabad. - 500004,<br>
+Telangana, India.<br>    
+                
+            </p> 
+        </div>
+        <div class="col-md-4 ">
+            <h3 style="margin-top:30px;margin-left:30px;"><i class="bi bi-telephone"></i> CONTACT</h3>
+            <p style="padding-top: 30px;">                        
+            <i class="bi bi-telephone"></i> Phone:  +91-40-23262152, +91-40-23262153, +91-40-23262154, +91-40-23262157
+            </p> 
+        </div>
+        <div class="col-md-3">
+            <h3 style="margin-top:30px; margin-left:50px;"><i class="bi bi-geo-alt-fill"></i> LOCATION</h3>
+            <div class="map-wrapper">
+                <iframe class="googlemap" src="" width="100%;" height="150px;" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" style="color:black;background-color:burlywood">
+            <div class="col-md-7 offset-md-5">
+                <p style="font-size:20px;">@2022 copyrights reserved<p>
+            </div> 
+        </div>
+    </div>
+    </footer>  
+</body>     
+</html>

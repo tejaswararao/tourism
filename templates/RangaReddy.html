@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>RangaReddy</title>
+    <style>
+        .container-fluid{
+            width: 100%;
+        }    
+        body{
+            background-color: whitesmoke;
+        }
+        .navbar{
+            padding:4rem,3rem;
+            top:0;
+            min-height: 8vh;
+            background-color:white;
+        }
+        nav img:hover{
+            transform:scale(1.1);
+        }
+        .navbar-toggler{
+            background:red;
+            border:none;
+            padding:10px;
+            outline:none;
+        }
+        .navbar-toggler span{
+            display: block;
+            width:20px;
+            border:1px;
+            height:2px;
+            background:white;
+        }
+        .navbar-toggler span+span{
+            margin-top:4px;
+            width:15px;
+            margin-left:2px;
+        }
+        .navbar-toggler span+span+span{  
+            width:7px;
+            margin-left:2px;
+        }
+        .navbar-expand-lg .navbar-nav .nav-link{
+            font-size:30px;
+            position:relative;
+            padding:2rem 1.2rem;
+            color:black;
+        }
+        #home{   
+            color:black;
+            font-size: 30px;
+        }
+        #home:hover{
+            color:white;
+        }
+        .navbar-expand-lg .navbar-nav .nav-link:hover{
+            color:white;
+        }
+        button{
+            transition-duration: 5s;
+            margin-left: 15px;
+            }
+        button:hover{       
+            transform: scale(1.2);   
+        }
+        .card {
+    background-color: white;
+    width: 350px;
+    border: none;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 12px
+    }
+
+    .circle-image img {
+    border: 6px solid #fff;
+    border-radius: 100%;
+    padding: 0px;
+    top: -28px;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    z-index: 1;
+    background: #e7d184;
+    cursor: pointer
+    }
+
+    .dot {
+    height: 18px;
+    width: 18px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid #fff;
+    top: -48px;
+    left: 186px;
+    z-index: 1000
+    }
+
+    .name {
+    margin-top: -21px;
+    font-size: 18px
+    }
+
+    .fw-500 {
+    font-weight: 500 !important
+    }
+
+    .start {
+    color: green
+    }
+
+ .stop {
+    color: red
+    }
+
+    
+    
+    </style>
+</head>
+<body >
+    <div class="container-fluid" >      
+        <div class="row">               
+        <div class="col-md-12">         
+        <nav class="navbar navbar-expand-lg  nav-menu fixed-top" style="background-color: grey; " >
+            {% load static %}
+            <img src="{% static 'Ts logo.jpg' %}" style="height:70px; border-radius: 3px;">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span ></span>
+            <span ></span>
+            <span ></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a id='home' class="nav-link" href="home"  >
+                            Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-left:6px;">
+                   District
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="Hyderabad">1.Hyderabad</a>
+                        <a class="dropdown-item" href="warangal">2.warngal</a>
+                        <a class="dropdown-item" href="Adilabad">3.Adilabad</a>
+                        <a class="dropdown-item" href="karimnagar">4.karimnagar</a>
+                        <a class="dropdown-item" href="RangaReddy">5.Ranga Reddy</a>
+                        <a class="dropdown-item" href="index">6.Khmmam</a>
+                        <a class="dropdown-item" href="Nizamabad">7.Nizamabad</a>
+                        <a class="dropdown-item" href="Mahabubnagar">8.Mahabubnagar</a>
+                        <a class="dropdown-item" href="Medak">9.Medak</a>
+                        <a class="dropdown-item" href="Nalgonda">10.Nalgonda</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="padding-left: 6px;" >
+                       Telangana Famous Places
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="charminar">Charminar</a>
+                        <a class="dropdown-item" href="goloconda">Goloconda Fort</a>
+                        <a class="dropdown-item" href="ThousandPillarTemple">Thousand pillars Temple</a>
+                        <a class="dropdown-item" href="salarjung">Salar Jang Museum</a>
+                        <a class="dropdown-item" href="nagarjunasagar">Nagarjuna Sagar</a>
+                         </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="home" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"   style="padding-left: 2px;">
+                            Telangana Temples
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="BrilaMandir">Brila Mandir</a>
+                            <a class="dropdown-item" href="SanghiTemple">Sanghi Temple</a>
+                            <a class="dropdown-item" href="ThousandPillarTemple">Thousand Pillar Temple</a>
+                            <a class="dropdown-item" href="RajaRajeswara">Raja Rajeswara </a>
+                     </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="home" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="padding-left: 2px;">
+                           T.S Waterfalls
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="kuntalawaterfall">Kuntala water Fall</a>
+                            <a class="dropdown-item" href="pocherawaterfall">Pochera Water Fall</a>
+                            <a class="dropdown-item" href="bogatha">Bogatha Water Fall</a>
+                        </div>
+                    </li>
+                                </ul>
+                </div>
+        </nav>      
+    </div> <!--col-md-12end -->
+    </div> <!--#row1 end-->
+    </div>  <!--container1-->          
+    
+<div class="container-fluid">
+    <div class="row" style="height:150px;">
+    </div>
+    <div class="row mb-5">
+        
+        <div class="col-md-6 offset-md-1">
+            <P style="font-size:20px; font-family:'bitter',serif;line-height:35px;text-align:justify; color: black;margin-left:50px;">
+                <h1>Anathagiri Hills</h1>
+                       </P>Dhokra (also spelt Dokra) is non–ferrous metal casting using the lost-wax casting technique. This sort of metal casting has been used in India for over 4,000 years and is still used. One of the earliest known lost wax artefacts is the dancing girl of Mohenjo-daro.[1] The product of dhokra artisans are in great demand in domestic and foreign markets because of primitive simplicity, enchanting folk motifs and forceful form. Dhokra horses, elephants, peacocks, owls, religious images, measuringbowls, and lamp caskets etc., are highly appreciated.[2] The lost wax technique for casting of copper based alloys has also been found in China, Egypt, Malaysia, Nigeria, Central America, and other places.
+               </div>
+        <div class="col-md-4 ">
+            <img src="{% static 'anatagirihills.jpg' %}" style="height:350px;border:2px solid black;border-radius:10px;width:100%">
+        
+        </div>
+    </div>
+    <div class="row mb-5">
+        
+        <div class="col-md-6 offset-md-1">
+            <P style="font-size:20px; font-family:'bitter',serif;line-height:35px;text-align:justify; color: black;margin-left:50px;">
+                <h1>Keesaragutta Temple</h1>
+                       </P>Dhokra (also spelt Dokra) is non–ferrous metal casting using the lost-wax casting technique. This sort of metal casting has been used in India for over 4,000 years and is still used. One of the earliest known lost wax artefacts is the dancing girl of Mohenjo-daro.[1] The product of dhokra artisans are in great demand in domestic and foreign markets because of primitive simplicity, enchanting folk motifs and forceful form. Dhokra horses, elephants, peacocks, owls, religious images, measuringbowls, and lamp caskets etc., are highly appreciated.[2] The lost wax technique for casting of copper based alloys has also been found in China, Egypt, Malaysia, Nigeria, Central America, and other places.
+  
+             </div>
+        <div class="col-md-4 ">
+            <img src="{% static 'keesaragutta-temple.jpg' %}" style="height:350px;border:2px solid black;border-radius:10px;width:100%">
+        
+        </div>
+    </div>
+   
+    <div class="row mb-5">
+        
+        <div class="col-md-6 offset-md-1">
+            <P style="font-size:20px; font-family:'bitter',serif;line-height:10px;text-align:justify; color: black;margin-left:50px;">
+                <h1>Chilkur Balaji Temple</h1>
+                       </P>Dhokra (also spelt Dokra) is non–ferrous metal casting using the lost-wax casting technique. This sort of metal casting has been used in India for over 4,000 years and is still used. One of the earliest known lost wax artefacts is the dancing girl of Mohenjo-daro.[1] The product of dhokra artisans are in great demand in domestic and foreign markets because of primitive simplicity, enchanting folk motifs and forceful form. Dhokra horses, elephants, peacocks, owls, religious images, measuringbowls, and lamp caskets etc., are highly appreciated.[2] The lost wax technique for casting of copper based alloys has also been found in China, Egypt, Malaysia, Nigeria, Central America, and other places.
+  
+             </div>
+        <div class="col-md-4 ">
+            <img src="{% static 'ChilkurBalajiTemple.jpg' %}" style="height:350px;border:2px solid black;border-radius:10px;width:100%">
+        
+        </div>
+    </div>
+   
+    
+    
+       
+       
+    <div class="container d-flex justify-content-center mt-5">  
+        <div class="card text-center mb-5">
+            <div class="circle-image"> 
+                <img src="{% static 'Ts logo.jpg' %}" width="50"> 
+               
+            </div> 
+            <span class="dot"></span>
+            <span class="name mb-1 fw-500">Telangana Tourism</span> 
+            <small class="text-black-50">V.Srinivas Goud</small>
+            <small class="text-black-50 font-weight-bold">+91-40-23262151</small>
+            <div class="location mt-4">
+                <span class="d-block"> 
+                    <i class="fa fa-map-marker start"></i> 
+                    <small class="text-truncate ml-2"> Tourism House
+                        Himayatnagar, Hyderabad - 500 029,
+    </small>
+                </span> 
+                <span>
+                    <i class="fa fa-map-marker stop mt-2"></i> 
+                    <small class="text-truncate ml-2">3-5-891,                     Telangana, India.</small> 
+                </span> 
+            </div>
+            
+                 </div>
+        </div>
+    </div>  
+    </div>
+    <footer>
+        <div class="container-fluid">
+        <div class="row" style="height:50px;"></div>
+        <div class="row" style="background-color:grey;color:white;">
+            <div class=" col-md-4 offset-md-1">
+                <h3 style="margin-top:30px;margin-left:10px;"><i class="bi bi-building"></i> Telangana Tourism Department</h3>
+                <p style="margin-left:10px;" ><br>
+                    Ground Floor, Kala Bhavan,<br>
+    Ravindra Bharathi,<br>
+    Hyderabad. - 500004,<br>
+    Telangana, India.<br>    
+                    
+                </p> 
+            </div>
+            <div class="col-md-4 ">
+                <h3 style="margin-top:30px;margin-left:30px;"><i class="bi bi-telephone"></i> CONTACT</h3>
+                <p style="padding-top: 30px;">                        
+                <i class="bi bi-telephone"></i> Phone:  +91-40-23262152, +91-40-23262153, +91-40-23262154, +91-40-23262157
+                </p> 
+            </div>
+            <div class="col-md-3">
+                <h3 style="margin-top:30px; margin-left:50px;"><i class="bi bi-geo-alt-fill"></i> LOCATION</h3>
+                <div class="map-wrapper">
+                    <iframe class="googlemap" src="" width="100%;" height="150px;" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+            </div>
+        </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row" style="color:black;background-color:burlywood">
+                <div class="col-md-7 offset-md-5">
+                    <p style="font-size:20px;">@2022 copyrights reserved<p>
+                </div> 
+            </div>
+        </div>
+        </footer>
+    
+</body>
+</html>
